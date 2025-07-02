@@ -1,0 +1,36 @@
+{
+  "name": "frontend-project-46",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/DSolokhin/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DSolokhin/frontend-project-46/actions)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSolokhin/frontend-project-46.git"
+  },
+  "keywords": [],
+  "author": "Dmitry Solokhin",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/DSolokhin/frontend-project-46/issues"
+  },
+  "homepage": "https://github.com/DSolokhin/frontend-project-46#readme",
+  "dependencies": {
+    "commander": "^14.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@jest/globals": "^30.0.3",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0",
+    "jest": "^30.0.3"
+  },
+  "bin": {
+  "gendiff": "bin/gendiff.js"
+}
+}
