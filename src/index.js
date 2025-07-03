@@ -1,6 +1,5 @@
-const genDiff = (filepath1, filepath2) => {
-  // Пока просто возвращаем заглушку
-  return 'Difference will be here'
+const genDiff = (filepath1, filepath2, format = 'stylish') => {
+  return `Comparing ${filepath1} with ${filepath2}\nFormat: ${format}`
 }
 
 export default genDiff
