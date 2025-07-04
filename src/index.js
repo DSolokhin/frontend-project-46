@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { getDataFromFile } from './parsers.js'
+import getDataFromFile from './parsers.js'
 
 const buildDiff = (data1, data2) => {
   const keys = _.sortBy(_.union(_.keys(data1), _.keys(data2)))

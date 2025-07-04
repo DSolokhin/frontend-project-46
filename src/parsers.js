@@ -10,7 +10,7 @@ const readFile = (filepath) => {
 
 const parseData = (data) => JSON.parse(data)
 
-export const getDataFromFile = (filepath) => {
+export default function getDataFromFile(filepath) {
   const data = readFile(filepath)
   return parseData(data)
 }
