@@ -12,10 +12,8 @@ const readFile = (filepath) => {
 export default function getDataFromFile(filepath) {
   const data = readFile(filepath)
   const ext = path.extname(filepath).toLowerCase()
-  
   if (ext === '.yml' || ext === '.yaml') {
     return parseYaml(data)
   }
-  
   return JSON.parse(data)
 }
