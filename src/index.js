@@ -22,7 +22,7 @@ const genDiff = (filepath1, filepath2) => {
   const data1 = getDataFromFile(filepath1)
   const data2 = getDataFromFile(filepath2)
   const diff = buildDiff(data1, data2)
-  return `{\n${diff}\n}\n\n`
+  return `{\n${diff}\n}`
 }
 
 export default genDiff
