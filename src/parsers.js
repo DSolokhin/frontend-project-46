@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { parseYaml } from './yamlParser.js'
 
 const getAbsolutePath = (filepath) => path.resolve(process.cwd(), filepath)
 
@@ -8,9 +9,13 @@ const readFile = (filepath) => {
   return fs.readFileSync(absolutePath, 'utf-8')
 }
 
-const parseData = (data) => JSON.parse(data)
-
 export default function getDataFromFile(filepath) {
   const data = readFile(filepath)
-  return parseData(data)
+  const ext = path.extname(filepath).toLowerCase()
+  
+  if (ext === '.yml' || ext === '.yaml') {
+    return parseYaml(data)
+  }
+  
+  return JSON.parse(data)
 }
