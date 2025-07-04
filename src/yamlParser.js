@@ -1,3 +1,2 @@
 import yaml from 'js-yaml'
-
-export default (data) => yaml.load(data)
+export const parseYaml = (data) => yaml.load(data)
