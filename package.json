@@ -4,7 +4,9 @@
   "description": "[![Actions Status](https://github.com/DSolokhin/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DSolokhin/frontend-project-46/actions)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "lint": "eslint .",
+    "sonar": "sonar-scanner"
   },
   "repository": {
     "type": "git",
@@ -28,9 +30,9 @@
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.32.0",
-    "jest": "^30.0.3"
+    "jest": "^30.0.4"
   },
   "bin": {
-  "gendiff": "bin/gendiff.js"
-}
+    "gendiff": "bin/gendiff.js"
+  }
 }
