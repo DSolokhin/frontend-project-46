@@ -7,7 +7,7 @@ const formatValue = (value, depth) => {
 
   const indent = '    '.repeat(depth + 1)
   const lines = Object.entries(value).map(
-    ([key, val]) => `${indent}${key}: ${formatValue(val, depth + 1)}`
+    ([key, val]) => `${indent}${key}: ${formatValue(val, depth + 1)}`,
   )
   return `{\n${lines.join('\n')}\n${'    '.repeat(depth)}}`
 }
@@ -23,7 +23,7 @@ const stylish = (diff, depth = 1) => {
       case 'changed':
         return [
           `${indent.slice(0, -2)}- ${node.key}: ${formatValue(node.oldValue, depth)}`,
-          `${indent.slice(0, -2)}+ ${node.key}: ${formatValue(node.newValue, depth)}`
+          `${indent.slice(0, -2)}+ ${node.key}: ${formatValue(node.newValue, depth)}`,
         ].join('\n')
       case 'nested':
         return `${indent}${node.key}: ${stylish(node.children, depth + 1)}`
