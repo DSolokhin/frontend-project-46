@@ -9,7 +9,7 @@ const formatValue = (value) => {
       .sort((a, b) => a.key.localeCompare(b.key))
       .flatMap((node) => {
         const currentPath = parentPath ? `${parentPath}.${node.key}` : node.key
-        
+  
         switch (node.type) {
           case 'added':
             return `Property '${currentPath}' was added with value: ${formatValue(node.value)}`
@@ -25,7 +25,7 @@ const formatValue = (value) => {
             throw new Error(`Unknown node type: ${node.type}`)
         }
       })
-    
+  
     return lines.join('\n')
   }
   

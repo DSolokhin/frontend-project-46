@@ -1,11 +1,11 @@
 const formatValue = (value, depth) => {
     if (value === null) return 'null'
     if (typeof value !== 'object') return String(value)
-    
+  
     const indent = ' '.repeat((depth + 1) * 4)
     const lines = Object.entries(value)
       .map(([key, val]) => `${indent}${key}: ${formatValue(val, depth + 1)}`)
-    
+  
     return `{\n${lines.join('\n')}\n${' '.repeat(depth * 4)}}`
   }
   
@@ -30,8 +30,8 @@ const formatValue = (value, depth) => {
           throw new Error(`Unknown node type: ${node.type}`)
       }
     })
-    
-    return depth === 0 
+  
+    return depth === 0
       ? `{\n${lines.join('\n')}\n}`
       : `{\n${lines.join('\n')}\n${' '.repeat(depth * 4)}}`
   }
