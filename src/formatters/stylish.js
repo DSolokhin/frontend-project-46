@@ -20,7 +20,7 @@ const formatValue = (value, depth) => {
         case 'updated':
           return [
             `${indent}- ${node.key}: ${formatValue(node.value1, depth + 1)}`,
-            `${indent}+ ${node.key}: ${formatValue(node.value2, depth + 1)}`
+            `${indent}+ ${node.key}: ${formatValue(node.value2, depth + 1)}`,
           ]
         case 'unchanged':
           return `${indent}  ${node.key}: ${formatValue(node.value, depth + 1)}`

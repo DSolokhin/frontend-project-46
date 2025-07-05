@@ -3,7 +3,7 @@ import plain from './plain.js'
 
 const formatters = {
   stylish,
-  plain
+  plain,
 }
 
 export default (formatName) => {

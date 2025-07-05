@@ -13,7 +13,7 @@ const buildDiff = (data1, data2) => {
       return {
         key,
         type: 'nested',
-        children: buildDiff(data1[key], data2[key])
+        children: buildDiff(data1[key], data2[key]),
       }
     }
     if (data1[key] !== data2[key]) {
@@ -21,7 +21,7 @@ const buildDiff = (data1, data2) => {
         key,
         type: 'updated',
         value1: data1[key],
-        value2: data2[key]
+        value2: data2[key],
       }
     }
     return { key, type: 'unchanged', value: data1[key] }
