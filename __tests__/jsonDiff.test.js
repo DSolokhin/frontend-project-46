@@ -11,7 +11,7 @@ test('json formatter returns valid json', () => {
   const filepath1 = getFixturePath('file1.json')
   const filepath2 = getFixturePath('file2.json')
   const result = genDiff(filepath1, filepath2, 'json')
-  
+
   expect(() => JSON.parse(result)).not.toThrow()
   const parsed = JSON.parse(result)
   expect(parsed).toBeInstanceOf(Array)
