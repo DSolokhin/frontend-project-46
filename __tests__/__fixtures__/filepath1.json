@@ -1,0 +1,21 @@
+{
+  "common": {
+    "setting1": true,
+    "setting2": 200,
+    "setting3": true,
+    "setting6": {
+      "doge": {
+        "wow": ""
+      }
+    }
+  },
+  "group1": {
+    "baz": "bas",
+    "nest": {
+      "key": "value"
+    }
+  },
+  "group2": {
+    "abc": 12345
+  }
+}

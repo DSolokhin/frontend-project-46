@@ -1,31 +1,30 @@
-import _ from 'lodash'
+const isObject = (value) => typeof value === 'object' && value !== null
 
-const buildDiff = (obj1, obj2) => {
-  const keys = _.sortBy(_.union(_.keys(obj1), _.keys(obj2)))
-
-  return keys.flatMap((key) => {
-    if (!_.has(obj2, key)) {
-      return { type: 'removed', key, value: obj1[key] }
+const buildDiff = (data1, data2) => {
+  const keys = new Set([...Object.keys(data1), ...Object.keys(data2)])
+  return Array.from(keys).sort().map((key) => {
+    if (!(key in data2)) {
+      return { key, type: 'removed', value: data1[key] }
     }
-    if (!_.has(obj1, key)) {
-      return { type: 'added', key, value: obj2[key] }
+    if (!(key in data1)) {
+      return { key, type: 'added', value: data2[key] }
     }
-
-    const value1 = obj1[key]
-    const value2 = obj2[key]
-
-    if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
-      return { type: 'nested', key, children: buildDiff(value1, value2) }
+    if (isObject(data1[key]) && isObject(data2[key])) {
+      return {
+        key,
+        type: 'nested',
+        children: buildDiff(data1[key], data2[key])
+      }
     }
-
-    if (!_.isEqual(value1, value2)) {
-      return [
-        { type: 'removed', key, value: value1 },
-        { type: 'added', key, value: value2 },
-      ]
+    if (data1[key] !== data2[key]) {
+      return {
+        key,
+        type: 'updated',
+        value1: data1[key],
+        value2: data2[key]
+      }
     }
-
-    return { type: 'unchanged', key, value: value1 }
+    return { key, type: 'unchanged', value: data1[key] }
   })
 }
 

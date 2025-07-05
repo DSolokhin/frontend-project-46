@@ -1,0 +1,24 @@
+{
+  "common": {
+    "follow": false,
+    "setting1": true,
+    "setting3": null,
+    "setting4": "blah blah",
+    "setting5": {
+      "key5": "value5"
+    },
+    "setting6": {
+      "doge": {
+        "wow": "so much"
+      },
+      "ops": "vops"
+    }
+  },
+  "group1": {
+    "baz": "bars",
+    "nest": "str"
+  },
+  "group3": {
+    "fee": 100500
+  }
+}
