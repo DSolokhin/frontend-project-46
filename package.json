@@ -2,7 +2,8 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/DSolokhin/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/DSolokhin/frontend-project-46/actions)",
-  "main": "index.js",
+  "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest",
     "lint": "eslint --fix .",
