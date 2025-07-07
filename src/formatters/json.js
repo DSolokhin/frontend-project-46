@@ -1,5 +1,5 @@
-const formatJson = diff => {
-  const buildJsonDiff = (nodes) => nodes.map((node) => {
+const formatJson = (diff) => {
+  const buildJsonDiff = nodes => nodes.map((node) => {
     const baseNode = {
       key: node.key,
       type: node.type,
