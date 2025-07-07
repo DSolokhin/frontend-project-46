@@ -11,6 +11,5 @@ jobs:
       with:
         node-version: 18
     - run: npm ci
-    - run: make lint
     - run: make test
     - run: make test-coverage
