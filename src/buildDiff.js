@@ -1,4 +1,4 @@
-const isObject = (value) => typeof value === 'object' && value !== null
+const isObject = value => typeof value === 'object' && value !== null
 
 const buildDiff = (data1, data2) => {
   const keys = new Set([...Object.keys(data1), ...Object.keys(data2)])

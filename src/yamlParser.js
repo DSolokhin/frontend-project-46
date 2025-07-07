@@ -1,3 +1,3 @@
 import yaml from 'js-yaml'
 
-export default (data) => yaml.load(data)
+export default data => yaml.load(data)

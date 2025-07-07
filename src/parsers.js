@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import parseYaml from './yamlParser.js'
 
-const getAbsolutePath = (filepath) => path.resolve(process.cwd(), filepath)
+const getAbsolutePath = filepath => path.resolve(process.cwd(), filepath)
 
 const readFile = (filepath) => {
   const absolutePath = getAbsolutePath(filepath)
